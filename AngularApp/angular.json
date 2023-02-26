@@ -1,0 +1,41 @@
+{
+  "cli": {
+    "analytics": "9dbe72f2-7dd4-42f7-8509-a8cfd94b9cf1",
+    "styles": [
+      "styles.scss",
+      "../node_modules/bootstrap/scss/bootstrap-flex.scss"
+    ],
+    "scripts": [
+      "../node_modules/jquery/dist/jquery.js",
+      "../node_modules/tether/dist/js/tether.js",
+      "../node_modules/bootstrap/dist/js/bootstrap.js"
+    ]
+  },
+  "version": 1,
+  "projects": {
+    "AngularApp": {
+      "projectType": "application",
+      "root": "",
+      "sourceRoot": "src",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/AngularApp",
+            "index": "index.html",
+            "main": "src/main.ts",
+            "polyfills": "src/polyfills.ts",
+            "tsConfig": "tsconfig.json",
+            "aot": true
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "AngularApp:build"
+          }
+        }
+      }
+    }},
+  "defaultProject": "AngularApp"
+}
